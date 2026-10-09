@@ -402,13 +402,26 @@ export function TrustPage() {
                       <p className="text-[11px] text-slate-400 mt-1">{tx.details}</p>
                     </div>
 
-                    <a
-                      href={tx.url}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#38bdf8]/10 hover:bg-[#38bdf8]/20 border border-[#38bdf8]/20 text-[#38bdf8] text-xs font-mono transition-colors self-start sm:self-auto"
-                    >
-                      <span>View Explorer Tx</span>
-                      <span className="material-symbols-outlined text-[14px]">arrow_outward</span>
-                    </a>
+                    <div className="flex items-center gap-2 self-start sm:self-auto">
+                      <button
+                        onClick={() => {
+                          navigator.clipboard.writeText(tx.signature);
+                          alert(`Copied signature to clipboard: ${tx.signature}`);
+                        }}
+                        title="Copy Solana Devnet Signature"
+                        className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 hover:text-white text-xs font-mono transition-colors"
+                      >
+                        <span className="material-symbols-outlined text-[13px]">content_copy</span>
+                        <span className="hidden md:inline">Copy Sig</span>
+                      </button>
+                      <a
+                        href={tx.url}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#38bdf8]/10 hover:bg-[#38bdf8]/20 border border-[#38bdf8]/20 text-[#38bdf8] text-xs font-mono transition-colors"
+                      >
+                        <span>View Explorer Tx</span>
+                        <span className="material-symbols-outlined text-[14px]">arrow_outward</span>
+                      </a>
+                    </div>
                   </div>
                 ))}
               </div>
