@@ -107,7 +107,7 @@ export function ResidentApp() {
             </div>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-7 text-xs font-medium text-slate-300">
+          <nav className="hidden lg:flex items-center gap-6 text-xs font-medium text-slate-300">
             <Link href="/" className="hover:text-white text-slate-300 transition-colors">
               Overview
             </Link>
@@ -122,6 +122,9 @@ export function ResidentApp() {
             </Link>
             <Link href="/oracle" className="hover:text-white text-slate-300 transition-colors">
               Oracle
+            </Link>
+            <Link href="/trust" className="hover:text-[#4edea3] text-slate-300 transition-colors">
+              Trust &amp; Proofs
             </Link>
           </nav>
 
