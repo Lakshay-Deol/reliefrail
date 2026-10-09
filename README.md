@@ -161,6 +161,7 @@ Open [http://localhost:3000](http://localhost:3000) to explore all interactive v
 ## 📁 Repository Documentation
 - [`AUDIT.md`](./AUDIT.md) — Comprehensive technical audit & on-chain vs simulated boundary.
 - [`CHANGELOG.md`](./CHANGELOG.md) — Phased changelog and version history.
+- [`docs/CASE_STUDY.md`](./docs/CASE_STUDY.md) — Full disaster relief case study, merits, demerits, and Solana utility.
 - [`docs/TRUST_MODEL.md`](./docs/TRUST_MODEL.md) — Multi-stakeholder trust, privacy, and regulatory framework.
 - [`docs/DATA_SOURCES.md`](./docs/DATA_SOURCES.md) — Meteorological and demographic citations.
 - [`submission/PITCH.md`](./submission/PITCH.md) — 1-page hackathon pitch document.
