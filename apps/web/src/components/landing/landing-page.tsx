@@ -30,18 +30,18 @@ export function LandingPage() {
 
       {/* Floating Pill Header */}
       <header className="fixed top-5 left-0 w-full z-50 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto bg-[#0a101f]/80 backdrop-blur-xl border border-white/[0.08] shadow-[0_8px_32px_rgba(0,0,0,0.4)] rounded-full h-14 px-5 flex items-center justify-between transition-all">
+        <div className="max-w-6xl mx-auto bg-[#0a101f]/85 backdrop-blur-2xl border border-white/[0.12] shadow-[0_12px_40px_rgba(0,0,0,0.55)] rounded-full h-14 px-4 sm:px-6 flex items-center justify-between transition-all">
           <Link href="/" className="flex items-center gap-3 group">
             <Logo className="w-7 h-7 rounded-md transition-transform group-hover:scale-105 shadow-sm" />
             <div className="flex items-center gap-2">
-              <span className="text-base font-semibold tracking-tight text-white">ReliefRail</span>
-              <span className="hidden sm:inline-block text-[10px] font-mono tracking-wider text-[#4edea3] bg-[#4edea3]/10 border border-[#4edea3]/20 px-2 py-0.5 rounded-full font-medium">
+              <span className="text-base font-semibold tracking-tight text-white group-hover:text-[#4edea3] transition-colors">ReliefRail</span>
+              <span className="hidden sm:inline-block text-[10px] font-mono tracking-wider text-[#4edea3] bg-[#4edea3]/10 border border-[#4edea3]/25 px-2 py-0.5 rounded-full font-medium">
                 SOLANA DEVNET
               </span>
             </div>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-7 text-xs font-medium text-slate-300">
+          <nav className="hidden lg:flex items-center gap-6 text-xs font-medium text-slate-300">
             <Link href="/" className="text-white font-semibold transition-colors">
               Overview
             </Link>
@@ -57,15 +57,21 @@ export function LandingPage() {
             <Link href="/oracle" className="hover:text-white text-slate-300 transition-colors">
               Oracle
             </Link>
-            <Link href="/trust" className="hover:text-white text-slate-300 transition-colors">
+            <Link href="/trust" className="hover:text-[#4edea3] text-slate-300 transition-colors">
               Trust &amp; Proofs
             </Link>
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <Link
+              href="/trust"
+              className="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-mono text-slate-300 hover:text-white hover:bg-white/[0.06] transition-colors"
+            >
+              <span>Proofs</span>
+            </Link>
             <Link
               href="/command"
-              className="px-4 py-2 bg-white hover:bg-slate-100 text-[#070b14] text-xs font-bold rounded-full transition-all duration-200 shadow-sm hover:shadow-md active:scale-95 flex items-center gap-1.5"
+              className="px-4 py-2 bg-gradient-to-r from-white to-slate-100 hover:from-slate-100 hover:to-white text-[#070b14] text-xs font-bold rounded-full transition-all duration-200 shadow-sm hover:shadow-lg active:scale-95 flex items-center gap-1.5"
             >
               <span>Launch App</span>
               <span className="material-symbols-outlined text-[14px]">arrow_outward</span>
