@@ -4,7 +4,7 @@ import { MotionRoot } from "@/components/ui/motion-root";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ReliefRail | Disaster Relief Infrastructure Protocol",
+  title: "ReliefRail",
   description:
     "Grounded in Nepal Floods & Cloudburst (September 2024). Programmable disaster relief tokens on Solana with strict on-chain spending caps, district zoning, price gouging defense, and post-30-day fund reclamation.",
 };
