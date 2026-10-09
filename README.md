@@ -126,8 +126,8 @@ Run `node scripts/demo-flow.mjs` to execute the full lifecycle on Devnet:
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/NikhileshThiru/rescu.git reliefrail
-cd reliefrail
+git clone https://github.com/Lakshay-Deol/relief-rails.git
+cd relief-rails
 
 # 2. Install monorepo dependencies
 pnpm install
