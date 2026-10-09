@@ -88,7 +88,7 @@ export function OracleConsole() {
             </div>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-7 text-xs font-medium text-slate-300">
+          <nav className="hidden lg:flex items-center gap-6 text-xs font-medium text-slate-300">
             <Link href="/" className="hover:text-white text-slate-300 transition-colors">
               Overview
             </Link>
@@ -103,6 +103,9 @@ export function OracleConsole() {
             </Link>
             <Link href="/oracle" className="text-white font-semibold transition-colors">
               Oracle
+            </Link>
+            <Link href="/trust" className="hover:text-[#4edea3] text-slate-300 transition-colors">
+              Trust &amp; Proofs
             </Link>
           </nav>
 
@@ -132,8 +135,6 @@ export function OracleConsole() {
             </div>
             <a
               href={toast.explorerUrl}
-              target="_blank"
-              rel="noopener noreferrer"
               className="text-[#6bd8cb] hover:underline flex items-center gap-0.5 text-[11px]"
             >
               <span>View on Explorer</span>
