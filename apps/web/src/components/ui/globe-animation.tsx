@@ -258,24 +258,48 @@ export function InteractiveGlobe({
       lastMouseY = e.clientY;
     };
 
-    const onMouseUp = () => {
+    const onTouchStart = (e: TouchEvent) => {
+      if (!e.touches[0]) return;
+      isDragging = true;
+      lastMouseX = e.touches[0].clientX;
+      lastMouseY = e.touches[0].clientY;
+    };
+
+    const onTouchMove = (e: TouchEvent) => {
+      if (!isDragging || !e.touches[0]) return;
+      const dx = e.touches[0].clientX - lastMouseX;
+      const dy = e.touches[0].clientY - lastMouseY;
+      rotY += dx * 0.007;
+      rotX += dy * 0.007;
+      rotX = Math.max(-0.9, Math.min(0.9, rotX));
+      lastMouseX = e.touches[0].clientX;
+      lastMouseY = e.touches[0].clientY;
+    };
+
+    const onTouchEnd = () => {
       isDragging = false;
     };
 
     const canvasEl = canvasRef.current;
     if (canvasEl) {
       canvasEl.addEventListener("mousedown", onMouseDown);
+      canvasEl.addEventListener("touchstart", onTouchStart, { passive: true });
       window.addEventListener("mousemove", onMouseMove);
+      window.addEventListener("touchmove", onTouchMove, { passive: true });
       window.addEventListener("mouseup", onMouseUp);
+      window.addEventListener("touchend", onTouchEnd);
     }
 
     return () => {
       cancelAnimationFrame(animationFrameId);
       if (canvasEl) {
         canvasEl.removeEventListener("mousedown", onMouseDown);
+        canvasEl.removeEventListener("touchstart", onTouchStart);
       }
       window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("touchmove", onTouchMove);
       window.removeEventListener("mouseup", onMouseUp);
+      window.removeEventListener("touchend", onTouchEnd);
     };
   }, [size, highlightLat, highlightLon]);
 
