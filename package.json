@@ -1,0 +1,44 @@
+{
+  "name": "rescu",
+  "private": true,
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "chain:build": "NO_DNA=1 anchor build && node scripts/sync-idl.mjs",
+    "chain:test": "pnpm chain:build && cargo test -p rescu --lib && NO_DNA=1 anchor test --validator legacy --skip-build",
+    "chain:validator": "bash scripts/validator.sh",
+    "chain:bench": "pnpm --filter @rescu/chain-tests bench",
+    "typecheck": "pnpm -r typecheck",
+    "data:prep": "pnpm --filter @rescu/data prep",
+    "data:report": "pnpm --filter @rescu/data report",
+    "db:migrate": "pnpm --filter @rescu/data migrate",
+    "data:load": "pnpm --filter @rescu/data load",
+    "test:model": "pnpm --filter @rescu/aid-model test",
+    "server:dev": "pnpm --filter @rescu/server dev",
+    "server:start": "pnpm --filter @rescu/server start",
+    "sim": "pnpm --filter @rescu/server sim",
+    "test:server": "pnpm --filter @rescu/server test",
+    "web:dev": "pnpm --filter @rescu/web dev",
+    "web:build": "pnpm --filter @rescu/web build",
+    "web:data": "pnpm --filter @rescu/data export-web",
+    "smoke": "pnpm --filter @rescu/server smoke",
+    "test:oracle": "pnpm --filter @rescu/oracle test",
+    "e2e": "node scripts/e2e-demo.mjs"
+  },
+  "devDependencies": {
+    "@rolldown/binding-win32-x64-msvc": "^1.2.13",
+    "@solana/web3.js": "1.99.0",
+    "@types/node": "22.20.4",
+    "typescript": "6.0.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "bigint-buffer",
+      "bufferutil",
+      "utf-8-validate"
+    ]
+  }
+}
